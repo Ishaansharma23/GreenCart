@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; 
+const API_URL = 'http://localhost:5000/api';
 
 const Drivers = () => {
     const [drivers, setDrivers] = useState([]);
 
     useEffect(() => {
-        axios.get(`${API_URL}/api/drivers`)  // /api prefix add kiya hai
+        axios.get(`${API_URL}/drivers`)
             .then(response => setDrivers(response.data))
             .catch(error => console.error("Error fetching drivers:", error));
     }, []);

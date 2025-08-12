@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import Drivers from './Components/Drivers';
 import RoutesComponent from './Components/RouteComponent';
+import './index.css';
 
 function App() {
   return (

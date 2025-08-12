@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; 
+const API_URL = 'http://localhost:5000/api';
 
 const RoutesComponent = () => {
     const [routes, setRoutes] = useState([]);
 
     useEffect(() => {
-        axios.get(`${API_URL}/api/routes`)  // /api prefix add kiya hai
+        axios.get(`${API_URL}/routes`)
             .then(response => setRoutes(response.data))
             .catch(error => console.error("Error fetching routes:", error));
     }, []);
@@ -15,10 +15,8 @@ const RoutesComponent = () => {
     return (
         <div className="bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold mb-2 text-gray-700">Route Performance</h2>
-            <p className="text-sm text-gray-500 mb-6">
-              Performance = Base Time - Avg. Actual Time. A positive value means the delivery was faster than planned.
-            </p>
-            <div className="overflow-x-auto">
+            <p className="text-sm text-gray-500 mb-6">Performance = Base Time - Avg. Actual Time. A positive value means faster delivery.</p>
+             <div className="overflow-x-auto">
                 <table className="min-w-full bg-white">
                     <thead className="bg-gray-200">
                         <tr>
