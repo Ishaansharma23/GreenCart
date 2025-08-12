@@ -4,7 +4,7 @@ const Driver = require('../models/driver');
 const Route = require('../models/route');
 const Order = require('../models/order');
 
-// GET /api/summary
+
 router.get('/summary', async (req, res) => {
     try {
         const totalOrders = await Order.countDocuments();
@@ -23,7 +23,7 @@ router.get('/summary', async (req, res) => {
     }
 });
 
-// GET /api/drivers
+
 router.get('/drivers', async (req, res) => {
     try {
         const drivers = await Driver.find().sort({ total_week_hours: -1 });
@@ -33,7 +33,7 @@ router.get('/drivers', async (req, res) => {
     }
 });
 
-// GET /api/routes
+
 router.get('/routes', async (req, res) => {
     try {
         const routes = await Route.find().lean();
