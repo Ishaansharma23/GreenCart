@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Backend base URL
-const API_URL = 'https://greencart-uyww.onrender.com';
+const API_URL = 'https://greencart-3-3xpk.onrender.com';
 
 const Dashboard = () => {
   const [summary, setSummary] = useState(null);
